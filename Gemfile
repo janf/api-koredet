@@ -28,6 +28,9 @@ gem 'puma', '~> 3.7'
 
 gem 'devise_token_auth'
 gem 'omniauth'
+gem 'rack-cors'
+
+gem 'active_model_serializers'
 
 
 
@@ -52,6 +55,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'figaro'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

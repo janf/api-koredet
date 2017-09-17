@@ -37,6 +37,22 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.default_options = { from: ENV["gmail_username"] }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:"smtp.gmail.com",
+    port:587,
+    domain:"gmail.com",
+    authentication: :login,
+    user_name:ENV["gmail_username"],
+    password: ENV["gmail_password"],
+    enable_starttls_auto: true
+  }
+
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

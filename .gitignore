@@ -7,6 +7,11 @@
 # Ignore bundler config.
 /.bundle
 
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -14,3 +19,6 @@
 !/tmp/.keep
 
 .byebug_history
+
+# Ignore application configuration
+/config/application.yml
