@@ -3,6 +3,9 @@ module Api::V1
 
     # GET /v1/users
     def index
+      puts "Header: { uid: " + request.headers['uid'] + "}"
+      puts "Header: { access-token: " + request.headers['access-token'] + "}"
+
       render json: User.all
     end
 
