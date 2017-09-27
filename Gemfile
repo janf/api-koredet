@@ -32,7 +32,8 @@ gem 'rack-cors'
 
 gem 'active_model_serializers'
 
-
+gem 'acts_as_tenant'
+#gem 'activerecord-multi-tenant'
 
 
 #group :development, :test do
