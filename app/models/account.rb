@@ -4,7 +4,7 @@ class Account < ApplicationRecord
 	#has_many :invitations, :foreign_key => :account_id, :dependent => :destroy
 
 
-	#def account_admins
-    #	admins = UserAccount.unscoped.where(account_id: self.id, account_admin: true)
-	#end	
+	def account_admins
+    	admins = UserAccount.unscoped.where(account_id: self.id, account_admin: true)
+	end	
 end

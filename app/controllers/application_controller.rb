@@ -15,9 +15,9 @@ class ApplicationController < ActionController::API
       if user_signed_in?
         puts current_user
         if !current_user.current_account_id.nil?
-          puts "Currenty account id: " + current_user.current_account_id.to_str
+          puts "Current account id: " + current_user.current_account_id.to_s
           account = Account.find(current_user.current_account_id)
-          if account.exist?
+          if !account.nil?
       	     set_current_tenant(account)
           else
             set_current_tenant(0)
