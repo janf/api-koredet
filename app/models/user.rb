@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   	include DeviseTokenAuth::Concerns::User
 
   	has_many :user_accounts
- 	has_many :accounts,  :through => :user_accounts
+ 	  has_many :accounts,  :through => :user_accounts
   
   	belongs_to :current_account, class_name: "Account"
 
