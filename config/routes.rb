@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   scope module: 'api' do
   	mount_devise_token_auth_for 'User', at: 'v1/auth'
-  	namespace :v1 do
+  	namespace :v1,  defaults: { format: :json }  do
   		#devise_for :users, :controllers => { registrations: 'registrations' }
     	resources :users, only: [:index, :show, :update] do
     		member do
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     			post 'add_user'
     		end
     	end
+
+      resources :locations
 
   	end
   end

@@ -33,6 +33,7 @@ gem 'rack-cors'
 gem 'active_model_serializers'
 
 gem 'acts_as_tenant'
+gem 'ancestry'
 #gem 'activerecord-multi-tenant'
 
 

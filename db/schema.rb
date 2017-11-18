@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927100051) do
+ActiveRecord::Schema.define(version: 20171115150140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20170927100051) do
     t.boolean "account_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "location_name", null: false
+    t.string "location_type", default: "P"
+    t.string "ancestry"
+    t.bigint "locations_id"
+    t.bigint "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_locations_on_account_id"
+    t.index ["locations_id"], name: "index_locations_on_locations_id"
   end
 
   create_table "user_accounts", force: :cascade do |t|
@@ -68,6 +80,8 @@ ActiveRecord::Schema.define(version: 20170927100051) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "locations", "accounts"
+  add_foreign_key "locations", "locations", column: "locations_id"
   add_foreign_key "user_accounts", "accounts"
   add_foreign_key "user_accounts", "users"
 end
