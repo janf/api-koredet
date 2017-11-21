@@ -2,7 +2,7 @@ module Api::V1
   class LocationsController < ApplicationController
 
 
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     # GET /apiv1/locations
