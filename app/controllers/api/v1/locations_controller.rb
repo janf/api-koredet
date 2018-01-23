@@ -3,12 +3,12 @@ module Api::V1
 
 
     before_action :authenticate_user!
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :set_location, only: [:show, :edit, :update, :destroy]
 
     # GET /apiv1/locations
     # GET /apiv1/locations.json
     def index
-      @locations = Location.roots 
+      @locations = Location.roots.order(:location_name) 
       render :json => @locations   #Using Location serializer by default
     end
 
@@ -42,6 +42,8 @@ module Api::V1
     # PATCH/PUT /apiv1/locations/1
     # PATCH/PUT /apiv1/locations/1.json
     def update
+      puts "Location::update (params): "  + location_params.inspect
+    
       if @location.update(location_params)
         render :json => {status: :ok, location: @location }
       else
@@ -53,7 +55,7 @@ module Api::V1
     # DELETE /apiv1/locations/1.json
     def destroy
       @location.destroy
-      render :json => { head: :no_content }
+      render :json => { status: :deleted, head: :no_content }
     end
 
     private
@@ -64,7 +66,7 @@ module Api::V1
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def location_params
-        params.require(:location).permit!
+        params.require(:location).permit(:id, :location_name,:location_type,:parent_id, :parent)
       end
   end
 end

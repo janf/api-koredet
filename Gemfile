@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
+#gem 'rails', github: 'rails/rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -34,6 +35,7 @@ gem 'active_model_serializers'
 
 gem 'acts_as_tenant'
 gem 'ancestry'
+gem 'activestorage' 
 #gem 'activerecord-multi-tenant'
 
 

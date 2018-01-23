@@ -1,4 +1,10 @@
 FactoryBot.define do
+    factory :item do
+        name "MyString"
+        image_url ""
+        description "MyText"
+    end
+
     factory :user do
     	id "99"
     	email "aabb@hh.de"

@@ -1,6 +1,6 @@
 class Location < ApplicationRecord
 
-	#acts_as_tenant(:account)
+	acts_as_tenant(:account)
 
 	has_ancestry
 	#has_many :inventories

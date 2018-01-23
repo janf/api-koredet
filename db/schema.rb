@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115150140) do
+ActiveRecord::Schema.define(version: 20180113103614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,16 +22,46 @@ ActiveRecord::Schema.define(version: 20171115150140) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name"
+    t.string "record_gid"
+    t.integer "blob_id"
+    t.time "created_at"
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_gid", "blob_id"], name: "index_active_storage_attachments_on_record_gid_and_blob_id", unique: true
+    t.index ["record_gid", "name"], name: "index_active_storage_attachments_on_record_gid_and_name"
+    t.index ["record_gid"], name: "index_active_storage_attachments_on_record_gid"
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key"
+    t.string "filename"
+    t.string "content_type"
+    t.text "metadata"
+    t.integer "byte_size"
+    t.string "checksum"
+    t.time "created_at"
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "image_url"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "location_name", null: false
     t.string "location_type", default: "P"
     t.string "ancestry"
-    t.bigint "locations_id"
+    t.bigint "parent_id"
     t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_locations_on_account_id"
-    t.index ["locations_id"], name: "index_locations_on_locations_id"
+    t.index ["parent_id"], name: "index_locations_on_locations_id"
   end
 
   create_table "user_accounts", force: :cascade do |t|
@@ -81,7 +111,7 @@ ActiveRecord::Schema.define(version: 20171115150140) do
   end
 
   add_foreign_key "locations", "accounts"
-  add_foreign_key "locations", "locations", column: "locations_id"
+  add_foreign_key "locations", "locations", column: "parent_id"
   add_foreign_key "user_accounts", "accounts"
   add_foreign_key "user_accounts", "users"
 end

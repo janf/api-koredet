@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :items
   scope module: 'api' do
   	mount_devise_token_auth_for 'User', at: 'v1/auth'
   	namespace :v1,  defaults: { format: :json }  do
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
     	end
 
       resources :locations
+
+      resources :items
 
   	end
   end
