@@ -38,11 +38,6 @@ GEM
       activemodel (= 5.1.4)
       activesupport (= 5.1.4)
       arel (~> 8.0)
-    activestorage (0.1)
-      actionpack (>= 5.1)
-      activejob (>= 5.1)
-      activerecord (>= 5.1)
-      activesupport (>= 5.1)
     activesupport (5.1.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -199,7 +194,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  activestorage
   acts_as_tenant
   ancestry
   devise_token_auth

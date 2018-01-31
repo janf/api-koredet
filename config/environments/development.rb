@@ -62,5 +62,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #Must wait until v5.2 to enable
-  config.active_storage.service = :local
+  #config.active_storage.service = :local
 end

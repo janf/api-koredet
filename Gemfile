@@ -35,7 +35,7 @@ gem 'active_model_serializers'
 
 gem 'acts_as_tenant'
 gem 'ancestry'
-gem 'activestorage' 
+#gem 'activestorage' 
 #gem 'activerecord-multi-tenant'
 
 
