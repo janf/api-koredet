@@ -10,9 +10,11 @@ end
 gem 'rails' #, '~> 5.2'
 #gem 'rails', github: 'rails/rails'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+#gem 'pg', '~> 0.18'
+gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+#gem 'puma', '~> 3.7'
+gem 'puma'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -28,6 +30,7 @@ gem 'puma', '~> 3.7'
 
 
 gem 'devise_token_auth'
+
 gem 'omniauth'
 gem 'rack-cors'
 

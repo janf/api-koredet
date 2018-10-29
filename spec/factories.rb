@@ -18,4 +18,9 @@ FactoryBot.define do
     	id "99"
     	account_name "Sam Rubys Account"
     end
+
+    factory :location do
+      id "99"
+      location_name "Boden"
+    end
 end

@@ -210,11 +210,11 @@ DEPENDENCIES
   figaro
   listen
   omniauth
-  pg (~> 0.18)
+  pg
   pry-byebug
   pry-rails
   pry-stack_explorer
-  puma (~> 3.7)
+  puma
   rack-cors
   rails
   rb-readline

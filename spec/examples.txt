@@ -1,7 +1,8 @@
-example_id                                                | status | run_time        |
---------------------------------------------------------- | ------ | --------------- |
-./spec/controllers/api/v1/items_controller_spec.rb[1:1:1] | passed | 0.23375 seconds |
-./spec/controllers/api/v1/items_controller_spec.rb[1:2:1] | passed | 0.24175 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:1:1] | passed | 0.21456 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:2:1] | passed | 0.29834 seconds |
-./spec/models/item_spec.rb[1:1:1]                         | passed | 0.00298 seconds |
+example_id                                                    | status | run_time        |
+------------------------------------------------------------- | ------ | --------------- |
+./spec/controllers/api/v1/items_controller_spec.rb[1:1:1]     | passed | 0.31704 seconds |
+./spec/controllers/api/v1/items_controller_spec.rb[1:2:1]     | passed | 0.32074 seconds |
+./spec/controllers/api/v1/locations_controller_spec.rb[1:1:1] | failed | 0.24449 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]     | passed | 0.31097 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]     | passed | 0.34036 seconds |
+./spec/models/item_spec.rb[1:1:1]                             | passed | 0.01169 seconds |
