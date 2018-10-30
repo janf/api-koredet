@@ -1,8 +1,10 @@
 example_id                                                    | status | run_time        |
 ------------------------------------------------------------- | ------ | --------------- |
-./spec/controllers/api/v1/items_controller_spec.rb[1:1:1]     | passed | 0.31704 seconds |
-./spec/controllers/api/v1/items_controller_spec.rb[1:2:1]     | passed | 0.32074 seconds |
-./spec/controllers/api/v1/locations_controller_spec.rb[1:1:1] | failed | 0.24449 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]     | passed | 0.31097 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]     | passed | 0.34036 seconds |
-./spec/models/item_spec.rb[1:1:1]                             | passed | 0.01169 seconds |
+./spec/controllers/api/v1/items_controller_spec.rb[1:1:1]     | passed | 0.35283 seconds |
+./spec/controllers/api/v1/items_controller_spec.rb[1:2:1]     | passed | 0.35821 seconds |
+./spec/controllers/api/v1/locations_controller_spec.rb[1:1:1] | passed | 0.29852 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]     | passed | 0.29123 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]     | passed | 0.35038 seconds |
+./spec/models/account_spec.rb[1:1:1]                          | passed | 0.00265 seconds |
+./spec/models/inventory_spec.rb[1:1:1]                        | passed | 0.05274 seconds |
+./spec/models/item_spec.rb[1:1:1]                             | passed | 0.00763 seconds |

@@ -1,12 +1,9 @@
 FactoryBot.define do
-    factory :item do
-        name "MyString"
-        image_url ""
-        description "MyText"
-    end
+
+
 
     factory :user do
-    	id "99"
+    	#id "99"
     	email "aabb@hh.de"
         current_account_id 2
         password "rubymyruby"
@@ -15,12 +12,26 @@ FactoryBot.define do
 
 
     factory :account do
-    	id "99"
-    	account_name "Sam Rubys Account"
+    		account_name "Sam Rubys Account"
+    end
+
+    factory :item do
+        account
+        name "MyString"
+        image_url ""
+        description "MyText"
     end
 
     factory :location do
-      id "99"
-      location_name "Boden"
+        account
+        location_name "Boden"
     end
+
+    factory :inventory do
+      account
+      item
+      location
+      qty 3
+    end
+
 end
