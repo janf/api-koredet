@@ -1,36 +1,34 @@
 FactoryBot.define do
 
-
+    factory :account do
+       account_name "Sam Rubys Account"
+    end
 
     factory :user do
-    	#id "99"
-    	email "aabb@hh.de"
-        current_account_id 2
-        password "rubymyruby"
-        password_confirmation "rubymyruby"
+      association :current_account, factory: :account
+    	email "aactest@hh.com"
+      name "Factory Test user"
+      password_confirmation "rubymyruby"
+      password "rubymyruby"
     end
 
-
-    factory :account do
-    		account_name "Sam Rubys Account"
-    end
 
     factory :item do
-        account
-        name "MyString"
+        account_id 0
+        name "My Factory Item"
         image_url ""
         description "MyText"
     end
 
     factory :location do
-        account
+        account_id 0
         location_name "Boden"
     end
 
     factory :inventory do
-      account
-      item
-      location
+      account_id 0
+      item_id 0
+      location_id 0
       qty 3
     end
 

@@ -1,10 +1,11 @@
-example_id                                                    | status | run_time        |
-------------------------------------------------------------- | ------ | --------------- |
-./spec/controllers/api/v1/items_controller_spec.rb[1:1:1]     | passed | 0.35283 seconds |
-./spec/controllers/api/v1/items_controller_spec.rb[1:2:1]     | passed | 0.35821 seconds |
-./spec/controllers/api/v1/locations_controller_spec.rb[1:1:1] | passed | 0.29852 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]     | passed | 0.29123 seconds |
-./spec/controllers/api/v1/users_controller_spec.rb[1:2:1]     | passed | 0.35038 seconds |
-./spec/models/account_spec.rb[1:1:1]                          | passed | 0.00265 seconds |
-./spec/models/inventory_spec.rb[1:1:1]                        | passed | 0.05274 seconds |
-./spec/models/item_spec.rb[1:1:1]                             | passed | 0.00763 seconds |
+example_id                                                      | status | run_time        |
+--------------------------------------------------------------- | ------ | --------------- |
+./spec/controllers/api/v1/inventories_controller_spec.rb[1:1:1] | passed | 0.18342 seconds |
+./spec/controllers/api/v1/items_controller_spec.rb[1:1:1]       | passed | 0.1493 seconds  |
+./spec/controllers/api/v1/items_controller_spec.rb[1:1:2]       | passed | 0.13849 seconds |
+./spec/controllers/api/v1/locations_controller_spec.rb[1:1:1]   | failed | 0.19873 seconds |
+./spec/controllers/api/v1/users_controller_spec.rb[1:1:1]       | passed | 0.27461 seconds |
+./spec/models/account_spec.rb[1:1:1]                            | passed | 0.00338 seconds |
+./spec/models/inventory_spec.rb[1:1:1]                          | passed | 0.01486 seconds |
+./spec/models/item_spec.rb[1:1:1]                               | failed | 0.00439 seconds |
+./spec/models/item_spec.rb[1:1:2]                               | failed | 0.00558 seconds |

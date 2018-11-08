@@ -8,16 +8,33 @@ describe Inventory, type: :model do
 
   #subject(:item) { FactoryBot.create :item}
 
-  #subject(:location) { FactoryBot.create :item}
-
-  subject(:inventory) { FactoryBot.create :inventory}
-
-
+  #subject(:inventory) { FactoryBot.create :inventory}
 
 	describe "Creation" do
 
+    before(:each) do
+      @account = FactoryBot.create :account
+      @item = FactoryBot.create(:item, account_id: @account.id)
+      @location = FactoryBot.create(:location, account_id: @account.id)
+      @inventory = FactoryBot.create(:inventory, account_id: @account.id, item_id: @item.id, location_id: @location.id )
+      puts "Created inventory test data"
+      puts "Inv ID: " + @inventory.id.to_s
+      puts "Item ID: " + @item.id.to_s
+      puts "Location: " + @location.id.to_s
+    end
+
+    after(:each) do
+
+      @inventory.delete
+      @item.delete
+      @location.delete
+      @account.delete
+      puts "Deleted inventory test data"
+    end
+
 		it "Gives inventory an id" do
-			expect(inventory.qty).to_not be_nil
+      puts "Inventory qty:" + @inventory.qty.to_s
+			expect(@inventory.qty).to_not be_nil
 		end
 
 

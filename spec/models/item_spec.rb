@@ -6,34 +6,38 @@ require 'rails_helper'
 
 describe Item, type: :model do
 
-	subject(:item) { FactoryBot.create :item}
+
+	describe "Item model" do
+
+		before(:all) do
+			@account = FactoryBot.create(:account)
+			puts "Creating account, ID: " + @account.id.to_s
+		end
+
+		after(:all) do
+			if @account
+				@account.delete
+			end
+			puts "Deleted item and account test data"
+		end
+
+		it "It creates an item" do
+			@item = FactoryBot.create(:item, account: @account)
+			#item = FactoryBot.create(:item)
+			puts "Creating new item, ID: " + @item.id.to_s + " Account: " + @item.account_id.to_s
+			expect(@item.id).to_not be_nil
+			@item.delete
+		end
+
+		it "It saves an item with new name" do
+			@item2 = FactoryBot.create(:item, account: @account)
+			@item2.name = "New name"
+			expect(@item2.save).to_not be_nil
+			@item2.delete
+		end
 
 
-
-	describe "Creation" do
-
-		it "Gives item an id" do
-			expect(item.id).to_not be_nil 
-		end	
-
-
-	    #it 'Accepts attachments' do
-		#    item.item_image.attach(io: File.open("/home/janfh/Pictures/test1.jpg"), filename: "test1.jpg", content_type: "image/jpg")
-		#    expect(item.item_image.attached?).to eq(true)
-	    #end
-
-	    #it 'Detaches attachments' do
-	    #	item.name = "Name changed"
-	    #	item.item_image.attach(io: File.open("/home/janfh/Pictures/test1.jpg"), filename: "test1.jpg", content_type: "image/jpg")
-	    #	expect(item.item_image.attached?).to eq(true)
-	    #	item.item_image.purge
-	    #	expect(item.item_image.attached?).to eq(false)
-	    #end
 	end
 
 
 end
-
-
-
-
